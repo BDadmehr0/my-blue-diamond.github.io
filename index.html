@@ -1,271 +1,542 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SKY</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#02070e">
+    <meta name="color-scheme" content="dark">
+
+    <title>SKY · 💎</title>
+
+    <meta
+        name="description"
+        content="یک سایت آبی برای SKY. بعضی چیزا ساخته میشن، بعضی چیزا هم فقط اتفاق میفتن."
+    >
+
+    <link rel="canonical" href="https://bdadmehr0.github.io/my-blue-diamond.github.io/">
+
+
+    <!-- =====================================================
+         ICONS
+    ====================================================== -->
+
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2360e0ff'/%3E%3Cstop offset='1' stop-color='%23007bff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M16 2 L27 12 L16 30 L5 12 Z' fill='url(%23g)'/%3E%3C/svg%3E"
+        sizes="any"
+    >
+
+    <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+
+    <!-- =====================================================
+         PWA
+    ====================================================== -->
+
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SKY">
+
+
+    <!-- =====================================================
+         SOCIAL
+    ====================================================== -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SKY">
+    <meta property="og:title" content="SKY · بعضی چیزا ساخته میشن">
+    <meta
+        property="og:description"
+        content="بعضی چیزا هم فقط اتفاق میفتن."
+    >
+    <meta property="og:url" content="https://bdadmehr0.github.io/my-blue-diamond.github.io/">
+    <meta property="og:image" content="https://bdadmehr0.github.io/my-blue-diamond.github.io/assets/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="الماس آبی">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SKY · بعضی چیزا ساخته میشن">
+    <meta name="twitter:description" content="بعضی چیزا هم فقط اتفاق میفتن.">
+    <meta name="twitter:image" content="https://bdadmehr0.github.io/my-blue-diamond.github.io/assets/og.png">
+
+    <link
+        rel="preload"
+        as="font"
+        type="font/woff2"
+        href="assets/fonts/estedad-arabic.woff2"
+        crossorigin
+    >
+
+    <link
+        rel="preload"
+        as="font"
+        type="font/woff2"
+        href="assets/fonts/vazirmatn-arabic.woff2"
+        crossorigin
+    >
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- =====================================================
-         BACKGROUND
-    ====================================================== -->
+    <!-- =========================================================
+         BOOT
+    ========================================================== -->
 
-    <div class="background">
-        <div class="blue-glow glow-1"></div>
-        <div class="blue-glow glow-2"></div>
-        <div class="blue-glow glow-3"></div>
+    <div class="boot" id="boot" aria-hidden="true">
 
-        <div id="particles"></div>
+        <div class="boot-inner">
 
-        <div class="noise"></div>
+            <div class="boot-gem">
+
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+
+                    <defs>
+                        <linearGradient id="bgem" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#8beeff"/>
+                            <stop offset=".5" stop-color="#31c5ff"/>
+                            <stop offset="1" stop-color="#0063ff"/>
+                        </linearGradient>
+                    </defs>
+
+                    <path
+                        class="bgem-line"
+                        d="M60 12 L96 44 L60 110 L24 44 Z"
+                        fill="none"
+                        stroke="url(#bgem)"
+                        stroke-width="1.5"
+                        stroke-linejoin="round"
+                    />
+
+                    <path
+                        class="bgem-line-2"
+                        d="M24 44 L96 44 M60 12 L60 110 M24 44 L60 44 L96 44 M60 44 L30 44"
+                        fill="none"
+                        stroke="url(#bgem)"
+                        stroke-width=".8"
+                        opacity=".55"
+                    />
+
+                </svg>
+
+                <div class="boot-shine"></div>
+
+            </div>
+
+            <div class="boot-word">
+                <span>B</span><span>L</span><span>U</span><span>E</span>
+            </div>
+
+            <div class="boot-bar">
+                <i id="bootBar"></i>
+            </div>
+
+            <div class="boot-pct">
+                <span id="bootPct">0</span>%
+            </div>
+
+        </div>
+
     </div>
 
 
-    <!-- =====================================================
-         MUSIC
-    ====================================================== -->
+    <!-- =========================================================
+         BACKDROP
+    ========================================================== -->
 
-    <audio id="music" loop muted>
-        <source src="assets/music.m4a" type="audio/mpeg">
-    </audio>
+    <div class="backdrop" aria-hidden="true">
 
-    <button id="musicToggle" class="music-glass">
-
-        <div class="music-icon">
-            <span id="musicIcon">◌</span>
+        <div class="bd bd-aurora">
+            <span class="au au-1"></span>
+            <span class="au au-2"></span>
+            <span class="au au-3"></span>
         </div>
 
-        <div class="music-text">
-            <strong id="musicTitle">
-                یه آهنگ اینجاست
-            </strong>
+        <div class="bd bd-stars" id="stars1"></div>
+        <div class="bd bd-stars bd-stars-2" id="stars2"></div>
 
-            <span id="musicStatus">
-                برای شنیدن روشنش کن
-            </span>
+        <div class="bd bd-grid"><i></i></div>
+
+        <div class="bd bd-beam"></div>
+
+        <div class="bd bd-vignette"></div>
+        <div class="bd bd-grain"></div>
+
+    </div>
+
+
+    <!-- =========================================================
+         3D GEM
+    ========================================================== -->
+
+    <div class="gem-stage" id="gemStage" aria-hidden="true">
+
+        <div class="gem-halo"></div>
+
+        <canvas id="gem"></canvas>
+
+        <div class="gem-flare"></div>
+
+    </div>
+
+
+    <div class="cursor" id="cursor" aria-hidden="true">
+        <span class="cursor-dot"></span>
+        <span class="cursor-ring"></span>
+    </div>
+
+
+    <!-- =========================================================
+         TOP BAR
+    ========================================================== -->
+
+    <header class="topbar" id="topbar">
+
+        <a class="brand" href="#hero" aria-label="SKY">
+
+            <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+                <path
+                    d="M16 2 L27 12 L16 30 L5 12 Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linejoin="round"
+                />
+                <path d="M5 12 H27 M16 2 L12 12 M16 2 L20 12 M12 12 L16 30 M20 12 L16 30"
+                    fill="none" stroke="currentColor" stroke-width=".7" opacity=".5"/>
+            </svg>
+
+            <span class="brand-text">SKY</span>
+
+        </a>
+
+        <span class="topbar-tag" id="topTag">FOR SKY</span>
+
+        <div class="topline" aria-hidden="true">
+            <i id="topLine"></i>
         </div>
 
-        <div class="music-wave">
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-        </div>
+    </header>
+
+
+    <!-- =========================================================
+         DOCK
+    ========================================================== -->
+
+    <div class="dock-wrap">
+
+        <nav class="dock" id="dock" aria-label="ناوبری بخش‌ها">
+
+            <a class="dock-ring" href="#hero" id="dockRing" aria-label="بازگشت به ابتدا">
+
+                <svg viewBox="0 0 42 42" aria-hidden="true">
+                    <circle class="ring-bg" cx="21" cy="21" r="18"/>
+                    <circle class="ring-fg" id="ringFg" cx="21" cy="21" r="18"/>
+                </svg>
+
+                <span class="ring-num" id="ringNum">۰۱</span>
+                <span class="ring-total">۰۶</span>
+
+            </a>
+
+            <div class="dock-mid">
+
+                <span class="dock-title" id="dockTitle">FOR SKY</span>
+
+                <div class="dock-dots" id="dockDots">
+                    <a class="dock-dot" href="#hero" aria-label="بخش ۰۱"></a>
+                    <a class="dock-dot" href="#story" aria-label="بخش ۰۲"></a>
+                    <a class="dock-dot" href="#debug" aria-label="بخش ۰۳"></a>
+                    <a class="dock-dot" href="#notes" aria-label="بخش ۰۴"></a>
+                    <a class="dock-dot" href="#blue" aria-label="بخش ۰۵"></a>
+                    <a class="dock-dot" href="#final" aria-label="بخش ۰۶"></a>
+                </div>
+
+            </div>
+
+            <button
+                class="dock-music"
+                id="musicToggle"
+                type="button"
+                aria-pressed="false"
+                aria-label="پخش موسیقی"
+            >
+
+                <span class="dm-live"></span>
+
+                <svg class="dm-icon dm-play" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8.5 5.2 L18.6 12 L8.5 18.8 Z"/>
+                </svg>
+
+                <svg class="dm-icon dm-pause" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="7.2" y="5" width="3.4" height="14" rx="1.5"/>
+                    <rect x="13.4" y="5" width="3.4" height="14" rx="1.5"/>
+                </svg>
+
+            </button>
+
+        </nav>
+
+    </div>
+
+
+    <!-- =========================================================
+         MUSIC HINT
+    ========================================================== -->
+
+    <button class="music-hint" id="musicHint" type="button">
+
+        <span class="mh-gem">💎</span>
+
+        <span class="mh-text">
+            <strong id="musicTitle">یه آهنگ اینجاست</strong>
+            <em id="musicStatus">برای شنیدن روشنش کن</em>
+        </span>
+
+        <span class="mh-wave">
+            <i></i><i></i><i></i><i></i>
+        </span>
 
     </button>
 
 
-    <!-- =====================================================
-         NAV
-    ====================================================== -->
-
-    <nav class="nav">
-
-        <div class="nav-logo">
-            <span>💎</span>
-            SKY
-        </div>
-
-        <div class="nav-progress">
-            <span id="progress"></span>
-        </div>
-
-        <div class="nav-counter">
-            <span id="sectionNumber">01</span>
-            /
-            06
-        </div>
-
-    </nav>
+    <audio id="music" loop preload="none">
+        <source src="assets/music.mp3" type="audio/mp4">
+    </audio>
 
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
 
-    <main>
+    <main id="main">
 
-        <section class="hero section" data-section="01">
 
-            <div class="hero-sky">
+        <!-- ================= HERO ================= -->
 
-                <div class="sun"></div>
+        <section class="sec sec-hero" id="hero" data-sec="1" data-tag="FOR SKY">
 
-                <div class="cloud cloud-1"></div>
-                <div class="cloud cloud-2"></div>
-                <div class="cloud cloud-3"></div>
+            <div class="wrap hero-wrap">
 
-            </div>
+                <span
+                    class="gem-space"
+                    data-gem
+                    data-scale="1"
+                    data-op="1"
+                    data-glow="1"
+                    data-spin="1"
+                    aria-hidden="true"
+                ></span>
 
-            <div class="floating-diamond diamond-1">💎</div>
-            <div class="floating-diamond diamond-2">💎</div>
-            <div class="floating-diamond diamond-3">💎</div>
+                <p class="label hero-label" data-rise>
+                    <span>FOR SKY</span>
+                </p>
 
-            <div class="hero-content reveal">
-
-                <div class="mini-label">
-                    FOR SKY
-                </div>
-
-                <h1>
-                    بعضی چیزا
-                    <br>
-                    <span>ساخته میشن</span>
+                <h1 class="display hero-title">
+                    <span class="ln"><span class="ln-i">بعضی چیزا</span></span>
+                    <span class="ln"><span class="ln-i grad">ساخته میشن</span></span>
                 </h1>
 
-                <p>
+                <p class="hero-sub" data-split="words" data-rise>
                     بعضی چیزا هم فقط اتفاق میفتن
                 </p>
 
-                <div class="hero-line"></div>
+                <div class="hero-foot" data-rise>
 
-                <div class="scroll-hint">
-                    <span>SCROLL</span>
-                    <div></div>
-                </div>
+                    <a class="hero-cta" href="#story">
+                        <span>شروع</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 4 V20 M6 14 L12 20 L18 14"
+                                fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"/>
+                        </svg>
+                    </a>
 
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             SECTION 02
-        ================================================== -->
-
-        <section class="story section" data-section="02">
-
-            <div class="section-number">
-                02
-            </div>
-
-            <div class="container">
-
-                <div class="story-grid">
-
-                    <div class="story-title reveal">
-
-                        <span class="blue-label">
-                            WHAT I GOT WRONG
-                        </span>
-
-                        <h2>
-                            فکر میکردم
-                            <br>
-                            همه چیز
-                            <span>قابل حلّه</span>
-                        </h2>
-
-                    </div>
-
-                    <div class="story-text reveal">
-
-                        <p>
-                            یه مدت فکر میکردم اگر به اندازه کافی
-                            فکر کنم، اگر به اندازه کافی تلاش کنم،
-                            اگر چیزای درست رو بگم،
-                            آخرش همه چیز درست میشه.
-                        </p>
-
-                        <p>
-                            بعد فهمیدم بعضی چیزا اصلا مشکل نیستن
-                            که بخوان حل بشن.
-                        </p>
-
-                        <p class="highlight">
-                            احساسات رو نمیشه debug کرد.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             SECTION 03
-        ================================================== -->
-
-        <section class="system section" data-section="03">
-
-            <div class="container">
-
-                <div class="system-header reveal">
-
-                    <span class="blue-label">
-                        DEBUGGING
+                    <span class="chip">
+                        <i class="chip-dot"></i>
+                        BLUE DIAMOND
                     </span>
 
-                    <h2>
-                        رابطه
-                        <span>سیستم عامل نیست</span>
+                </div>
+
+            </div>
+
+            <div class="scroll-cue" aria-hidden="true">
+                <span>SCROLL</span>
+                <div class="cue-line"><i></i></div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= MARQUEE ================= -->
+
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track" id="marqueeTrack">
+                <span>BLUE DIAMOND</span><i>💎</i>
+                <span>FOR SKY</span><i>✦</i>
+                <span>SOME THINGS JUST HAPPEN</span><i>💎</i>
+                <span>NO EXPECTATIONS</span><i>✦</i>
+            </div>
+        </div>
+
+
+        <!-- ================= 02 · STORY ================= -->
+
+        <section class="sec sec-story" id="story" data-sec="2" data-tag="WHAT I GOT WRONG">
+
+            <span class="sec-num" data-parallax="-.12" aria-hidden="true">۰۲</span>
+
+            <span
+                class="gem-point"
+                data-gem
+                data-scale=".58"
+                data-op=".28"
+                data-glow=".38"
+                data-spin=".55"
+                style="top: 5%; inset-inline-end: -5%"
+                aria-hidden="true"
+            ></span>
+
+            <div class="wrap story-wrap">
+
+                <header class="story-head">
+
+                    <p class="label" data-rise>
+                        <span>WHAT I GOT WRONG</span>
+                    </p>
+
+                    <h2 class="display h2">
+                        <span class="ln"><span class="ln-i">فکر میکردم</span></span>
+                        <span class="ln"><span class="ln-i">همه چیز</span></span>
+                        <span class="ln"><span class="ln-i grad">قابل حلّه</span></span>
                     </h2>
+
+                </header>
+
+                <div class="story-body">
+
+                    <p class="body-text" data-lit>
+                        یه مدت فکر میکردم اگر به اندازه کافی فکر کنم،
+                        اگر به اندازه کافی تلاش کنم،
+                        اگر چیزای درست رو بگم،
+                        آخرش همه چیز درست میشه.
+                    </p>
+
+                    <p class="body-text" data-lit>
+                        بعد فهمیدم بعضی چیزا اصلا مشکل نیستن
+                        که بخوان حل بشن.
+                    </p>
+
+                    <blockquote class="pull" data-lit>
+                        احساسات رو نمیشه <bdi>debug</bdi> کرد.
+                    </blockquote>
 
                 </div>
 
+            </div>
 
-                <div class="terminal reveal">
+            <div class="story-orb" aria-hidden="true"></div>
 
-                    <div class="terminal-bar">
+        </section>
 
-                        <div class="terminal-dots">
+
+        <!-- ================= 03 · DEBUG ================= -->
+
+        <section class="sec sec-debug" id="debug" data-sec="3" data-tag="DEBUGGING">
+
+            <span
+                class="gem-point"
+                data-gem
+                data-scale=".5"
+                data-op=".22"
+                data-glow=".3"
+                data-spin=".5"
+                style="top: 6%; inset-inline-start: -6%"
+                aria-hidden="true"
+            ></span>
+
+            <div class="wrap">
+
+                <header class="center-head">
+
+                    <p class="label" data-rise>
+                        <span>DEBUGGING</span>
+                    </p>
+
+                    <h2 class="display h2">
+                        <span class="ln"><span class="ln-i">رابطه</span></span>
+                        <span class="ln"><span class="ln-i grad">سیستم عامل نیست</span></span>
+                    </h2>
+
+                </header>
+
+
+                <div class="term" id="term" data-rise>
+
+                    <div class="term-bar">
+
+                        <span class="term-dots">
+                            <i></i><i></i><i></i>
+                        </span>
+
+                        <span class="term-name">relationship.exe</span>
+
+                        <span class="term-live">
                             <i></i>
-                            <i></i>
-                            <i></i>
-                        </div>
-
-                        <span>
-                            relationship.exe
+                            LIVE
                         </span>
 
                     </div>
 
-                    <div class="terminal-content">
+                    <div class="term-body" id="termBody" dir="ltr">
 
-                        <div>
+                        <div class="tl tl-cmd">
                             <span class="cyan">dadmehr@sky</span>:~$
-                            ./debug
+                            <span class="typed" data-type="./debug"></span><span class="caret t-caret"></span>
                         </div>
 
-                        <br>
+                        <div class="tl">checking expectations...</div>
+                        <div class="tl">checking feelings...</div>
+                        <div class="tl">checking assumptions...</div>
 
-                        <div>
-                            checking expectations...
-                        </div>
+                        <div class="tl tl-err">ERROR: feelings are not programmable</div>
+                        <div class="tl tl-err">ERROR: love cannot be forced</div>
 
-                        <div>
-                            checking feelings...
-                        </div>
+                        <div class="tl tl-ok">process completed.</div>
 
-                        <div>
-                            checking assumptions...
-                        </div>
-
-                        <br>
-
-                        <div class="error">
-                            ERROR: feelings are not programmable
-                        </div>
-
-                        <div class="error">
-                            ERROR: love cannot be forced
-                        </div>
-
-                        <br>
-
-                        <div class="success">
-                            process completed.
+                        <div class="tl tl-cmd tl-last">
+                            <span class="cyan">dadmehr@sky</span>:~$
+                            <span class="caret"></span>
                         </div>
 
                     </div>
+
+                    <button class="term-foot" id="termReplay" type="button">
+                        <span class="tf-dot"></span>
+                        دوباره اجرا کن
+                    </button>
 
                 </div>
 
@@ -274,84 +545,86 @@
         </section>
 
 
-        <!-- =================================================
-             SECTION 04
-        ================================================== -->
+        <!-- ================= 04 · NOTES ================= -->
 
-        <section class="memories section" data-section="04">
+        <section class="sec sec-notes" id="notes" data-sec="4" data-tag="LITTLE THINGS">
 
-            <div class="container">
+            <span
+                class="gem-point"
+                data-gem
+                data-scale=".52"
+                data-op=".2"
+                data-glow=".28"
+                data-spin=".5"
+                style="top: 3%; inset-inline-end: 12%"
+                aria-hidden="true"
+            ></span>
 
-                <div class="center-title reveal">
+            <div class="wrap">
 
-                    <span class="blue-label">
-                        LITTLE THINGS
-                    </span>
+                <header class="center-head">
 
-                    <h2>
-                        ولی بعضی چیزا
-                        <br>
-                        هنوز <span>قشنگن</span>
+                    <p class="label" data-rise>
+                        <span>LITTLE THINGS</span>
+                    </p>
+
+                    <h2 class="display h2">
+                        <span class="ln"><span class="ln-i">ولی بعضی چیزا</span></span>
+                        <span class="ln"><span class="ln-i">هنوز <span class="grad">قشنگن</span></span></span>
                     </h2>
 
-                </div>
+                </header>
+
+            </div>
 
 
-                <div class="memory-stack">
+            <div class="deck" id="deck">
 
-                    <article class="memory-card reveal">
+                <div class="deck-pin">
 
-                        <div class="memory-icon">
-                            💎
+                    <div class="deck-count">
+                        <span id="deckNow">۰۱</span>
+                        <i></i>
+                        <span class="dim">۰۳</span>
+                    </div>
+
+
+                    <article class="note" data-note="1">
+                        <div class="note-top">
+                            <span class="note-idx">001</span>
+                            <span class="note-icon">💎</span>
                         </div>
-
-                        <span>
-                            001
-                        </span>
-
                         <p>
                             دو سال چیز کمی نیست.
                             حتی اگر آخرش اون چیزی نشه
                             که فکر میکردم.
                         </p>
-
+                        <span class="note-shine"></span>
                     </article>
 
-
-                    <article class="memory-card reveal">
-
-                        <div class="memory-icon">
-                            ☁
+                    <article class="note" data-note="2">
+                        <div class="note-top">
+                            <span class="note-idx">002</span>
+                            <span class="note-icon">☁</span>
                         </div>
-
-                        <span>
-                            002
-                        </span>
-
                         <p>
                             بعضی آدم‌ها میان توی زندگی آدم
                             و باعث میشن چیزایی درباره خودت بفهمی
                             که قبلش نمیفهمیدی.
                         </p>
-
+                        <span class="note-shine"></span>
                     </article>
 
-
-                    <article class="memory-card reveal">
-
-                        <div class="memory-icon">
-                            ✦
+                    <article class="note" data-note="3">
+                        <div class="note-top">
+                            <span class="note-idx">003</span>
+                            <span class="note-icon">✦</span>
                         </div>
-
-                        <span>
-                            003
-                        </span>
-
                         <p>
                             و فکر کنم همین به تنهایی
                             ارزش خیلی از چیزایی که گذشت رو داره.
                         </p>
-
+                        <span class="note-shine"></span>
                     </article>
 
                 </div>
@@ -361,83 +634,93 @@
         </section>
 
 
-        <!-- =================================================
-             SECTION 05
-        ================================================== -->
+        <!-- ================= 05 · BLUE WORLD ================= -->
 
-        <section class="blue-world section" data-section="05">
+        <section class="sec sec-blue" id="blue" data-sec="5" data-tag="NO EXPECTATIONS">
 
-            <div class="giant-diamond">
-                💎
+            <span
+                class="gem-point"
+                data-gem
+                data-scale="1.32"
+                data-op=".5"
+                data-glow="1.25"
+                data-spin=".8"
+                style="top: 50%; left: 50%"
+                aria-hidden="true"
+            ></span>
+
+            <div class="orbits" aria-hidden="true">
+
+                <span class="orbit o-1"><i></i></span>
+                <span class="orbit o-2"><i></i></span>
+                <span class="orbit o-3"><i></i></span>
+
             </div>
 
-            <div class="blue-orbit orbit-1"></div>
-            <div class="blue-orbit orbit-2"></div>
-            <div class="blue-orbit orbit-3"></div>
+            <div class="wrap center blue-inner">
 
-            <div class="blue-content reveal">
+                <p class="label" data-rise>
+                    <span>NO EXPECTATIONS</span>
+                </p>
 
-                <span class="blue-label">
-                    NO EXPECTATIONS
-                </span>
-
-                <h2>
-                    این سایت
-                    <br>
-                    برای برگردوندنت نیست
+                <h2 class="display h2 h2-xl">
+                    <span class="ln"><span class="ln-i">این سایت</span></span>
+                    <span class="ln"><span class="ln-i">برای برگردوندنت نیست</span></span>
                 </h2>
 
-                <p>
-                    نمیخوام چیزی رو باهاش ثابت کنم
-                    <br>
-                    یا مجبور باشی چیزی رو حس کنی
-                    <br>
-                    فقط چون من دوست دارم حسش کنی
-                </p>
+                <div class="blue-body">
+
+                    <p data-lit>نمیخوام چیزی رو باهاش ثابت کنم</p>
+                    <p data-lit>یا مجبور باشی چیزی رو حس کنی</p>
+                    <p data-lit>فقط چون من دوست دارم حسش کنی</p>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- =================================================
-             SECTION 06
-        ================================================== -->
+        <!-- ================= 06 · FINAL ================= -->
 
-        <section class="final section" data-section="06">
+        <section class="sec sec-final" id="final" data-sec="6" data-tag="06 / END">
 
-            <div class="final-glow"></div>
+            <div class="final-glow" aria-hidden="true"></div>
 
-            <div class="container">
+            <span
+                class="gem-point"
+                data-gem
+                data-scale=".92"
+                data-op=".55"
+                data-glow="1.15"
+                data-spin=".7"
+                style="top: 30%; left: 50%"
+                aria-hidden="true"
+            ></span>
 
-                <div class="final-content reveal">
+            <div class="wrap center final-inner">
 
-                    <div class="final-diamond">
-                        💎
-                    </div>
+                <p class="label" data-rise>
+                    <span>۰۶ / END</span>
+                </p>
 
-                    <span class="blue-label">
-                        06 / END
+                <h2 class="display h2">
+                    <span class="ln"><span class="ln-i">تو برای من</span></span>
+                    <span class="ln">
+                        <span class="ln-i">مهم بودی
+                            <span class="grad">و هستی</span>
+                        </span>
                     </span>
+                </h2>
 
-                    <h2>
-                        تو برای من
-                        <br>
-                        مهم بودی
-                        <span>و هستی</span>
-                    </h2>
+                <div class="final-rule" aria-hidden="true"></div>
 
-                    <div class="final-line"></div>
+                <div class="final-lines">
 
-                    <p>
-                        اینو نمیگم که ازش نتیجه‌ای بگیرم.
-                    </p>
+                    <p data-lit>اینو نمیگم که ازش نتیجه‌ای بگیرم.</p>
+                    <p data-lit>فقط چون حقیقتشه.</p>
 
-                    <p>
-                        فقط چون حقیقتشه.
-                    </p>
-
-                    <p class="small-final">
+                    <p class="soft" data-lit>
                         لازم نیست جواب بدی.
                         <br>
                         لازم نیست چیزی رو درست کنی.
@@ -445,20 +728,45 @@
                         فقط همین.
                     </p>
 
-                    <div class="end-mark">
-                        💎
-                    </div>
-
                 </div>
 
+                <button class="gem-tap" id="gemTap" type="button" aria-label="لمس کن">
+                    <span>💎</span>
+                    <i class="tap-ring"></i>
+                    <i class="tap-ring tap-ring-2"></i>
+                </button>
+
             </div>
+
+
+            <footer class="foot">
+
+                <span class="foot-brand">
+                    <svg viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 2 L27 12 L16 30 L5 12 Z"
+                            fill="none" stroke="currentColor"
+                            stroke-width="1.4" stroke-linejoin="round"/>
+                    </svg>
+                    SKY
+                </span>
+
+                <span class="foot-mid">BLUE DIAMOND</span>
+
+                <span class="foot-year">۲۰۲۶</span>
+
+            </footer>
 
         </section>
 
     </main>
 
 
-    <script src="script.js"></script>
+    <div class="burst" id="burst" aria-hidden="true"></div>
+
+
+    <script src="assets/vendor/lenis.min.js" defer></script>
+    <script src="script.js" defer></script>
 
 </body>
+
 </html>

@@ -1,0 +1,84 @@
+# =========================================================
+#  GitHub Pages — OPTIONAL action based deployment
+#  ---------------------------------------------------------
+#  HOW TO USE
+#
+#    1. move this file to:  .github/workflows/pages.yml
+#       (GitHub blocks Apps from creating workflow files, which is
+#        why it ships here instead of already being in place)
+#
+#    2. push to main — nothing else to configure, the workflow
+#       turns Pages on by itself the first time it runs.
+#
+#  after the first successful run the site lives at:
+#    https://bdadmehr0.github.io/my-blue-diamond.github.io/
+#
+#  ---------------------------------------------------------
+#  OR, if you would rather not use Actions at all:
+#
+#    Settings -> Pages -> Source: "Deploy from a branch"
+#                  Branch: main   Folder: / (root)   Save
+#
+#    that needs no workflow file and works immediately.
+# =========================================================
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          # creates the Pages site when it does not exist yet
+          enablement: true
+
+      - name: Stage the site
+        run: |
+          mkdir -p _site
+          tar -cf - \
+            --exclude='./.git' \
+            --exclude='./.github' \
+            --exclude='./node_modules' \
+            --exclude='./tools' \
+            --exclude='./package.json' \
+            --exclude='./package-lock.json' \
+            . | tar -xf - -C _site
+          echo "--- staged ---"
+          du -sh _site
+          find _site -maxdepth 2 -not -path '*/assets/*' | sort
+
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy
+        id: deploy
+        uses: actions/deploy-pages@v4

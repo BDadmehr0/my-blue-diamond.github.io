@@ -1,0 +1,10 @@
+# the site itself has no build step — node_modules only ever shows
+# up for the asset generator in tools/ (see README)
+node_modules/
+
+# the staging directory the pages workflow creates
+_site/
+
+# os noise
+.DS_Store
+Thumbs.db
