@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SKY</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="background">
+        <div class="blue-glow glow-1"></div>
+        <div class="blue-glow glow-2"></div>
+        <div class="blue-glow glow-3"></div>
+
+        <div id="particles"></div>
+
+        <div class="noise"></div>
+    </div>
+
+
+    <!-- =====================================================
+         MUSIC
+    ====================================================== -->
+
+    <audio id="music" loop muted>
+        <source src="assets/music.m4a" type="audio/mpeg">
+    </audio>
+
+    <button id="musicToggle" class="music-glass">
+
+        <div class="music-icon">
+            <span id="musicIcon">◌</span>
+        </div>
+
+        <div class="music-text">
+            <strong id="musicTitle">
+                یه آهنگ اینجاست
+            </strong>
+
+            <span id="musicStatus">
+                برای شنیدن روشنش کن
+            </span>
+        </div>
+
+        <div class="music-wave">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+
+    </button>
+
+
+    <!-- =====================================================
+         NAV
+    ====================================================== -->
+
+    <nav class="nav">
+
+        <div class="nav-logo">
+            <span>💎</span>
+            SKY
+        </div>
+
+        <div class="nav-progress">
+            <span id="progress"></span>
+        </div>
+
+        <div class="nav-counter">
+            <span id="sectionNumber">01</span>
+            /
+            06
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main>
+
+        <section class="hero section" data-section="01">
+
+            <div class="hero-sky">
+
+                <div class="sun"></div>
+
+                <div class="cloud cloud-1"></div>
+                <div class="cloud cloud-2"></div>
+                <div class="cloud cloud-3"></div>
+
+            </div>
+
+            <div class="floating-diamond diamond-1">💎</div>
+            <div class="floating-diamond diamond-2">💎</div>
+            <div class="floating-diamond diamond-3">💎</div>
+
+            <div class="hero-content reveal">
+
+                <div class="mini-label">
+                    FOR SKY
+                </div>
+
+                <h1>
+                    بعضی چیزا
+                    <br>
+                    <span>ساخته میشن</span>
+                </h1>
+
+                <p>
+                    بعضی چیزا هم فقط اتفاق میفتن
+                </p>
+
+                <div class="hero-line"></div>
+
+                <div class="scroll-hint">
+                    <span>SCROLL</span>
+                    <div></div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SECTION 02
+        ================================================== -->
+
+        <section class="story section" data-section="02">
+
+            <div class="section-number">
+                02
+            </div>
+
+            <div class="container">
+
+                <div class="story-grid">
+
+                    <div class="story-title reveal">
+
+                        <span class="blue-label">
+                            WHAT I GOT WRONG
+                        </span>
+
+                        <h2>
+                            فکر میکردم
+                            <br>
+                            همه چیز
+                            <span>قابل حلّه</span>
+                        </h2>
+
+                    </div>
+
+                    <div class="story-text reveal">
+
+                        <p>
+                            یه مدت فکر میکردم اگر به اندازه کافی
+                            فکر کنم، اگر به اندازه کافی تلاش کنم،
+                            اگر چیزای درست رو بگم،
+                            آخرش همه چیز درست میشه.
+                        </p>
+
+                        <p>
+                            بعد فهمیدم بعضی چیزا اصلا مشکل نیستن
+                            که بخوان حل بشن.
+                        </p>
+
+                        <p class="highlight">
+                            احساسات رو نمیشه debug کرد.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SECTION 03
+        ================================================== -->
+
+        <section class="system section" data-section="03">
+
+            <div class="container">
+
+                <div class="system-header reveal">
+
+                    <span class="blue-label">
+                        DEBUGGING
+                    </span>
+
+                    <h2>
+                        رابطه
+                        <span>سیستم عامل نیست</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="terminal reveal">
+
+                    <div class="terminal-bar">
+
+                        <div class="terminal-dots">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+
+                        <span>
+                            relationship.exe
+                        </span>
+
+                    </div>
+
+                    <div class="terminal-content">
+
+                        <div>
+                            <span class="cyan">dadmehr@sky</span>:~$
+                            ./debug
+                        </div>
+
+                        <br>
+
+                        <div>
+                            checking expectations...
+                        </div>
+
+                        <div>
+                            checking feelings...
+                        </div>
+
+                        <div>
+                            checking assumptions...
+                        </div>
+
+                        <br>
+
+                        <div class="error">
+                            ERROR: feelings are not programmable
+                        </div>
+
+                        <div class="error">
+                            ERROR: love cannot be forced
+                        </div>
+
+                        <br>
+
+                        <div class="success">
+                            process completed.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SECTION 04
+        ================================================== -->
+
+        <section class="memories section" data-section="04">
+
+            <div class="container">
+
+                <div class="center-title reveal">
+
+                    <span class="blue-label">
+                        LITTLE THINGS
+                    </span>
+
+                    <h2>
+                        ولی بعضی چیزا
+                        <br>
+                        هنوز <span>قشنگن</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="memory-stack">
+
+                    <article class="memory-card reveal">
+
+                        <div class="memory-icon">
+                            💎
+                        </div>
+
+                        <span>
+                            001
+                        </span>
+
+                        <p>
+                            دو سال چیز کمی نیست.
+                            حتی اگر آخرش اون چیزی نشه
+                            که فکر میکردم.
+                        </p>
+
+                    </article>
+
+
+                    <article class="memory-card reveal">
+
+                        <div class="memory-icon">
+                            ☁
+                        </div>
+
+                        <span>
+                            002
+                        </span>
+
+                        <p>
+                            بعضی آدم‌ها میان توی زندگی آدم
+                            و باعث میشن چیزایی درباره خودت بفهمی
+                            که قبلش نمیفهمیدی.
+                        </p>
+
+                    </article>
+
+
+                    <article class="memory-card reveal">
+
+                        <div class="memory-icon">
+                            ✦
+                        </div>
+
+                        <span>
+                            003
+                        </span>
+
+                        <p>
+                            و فکر کنم همین به تنهایی
+                            ارزش خیلی از چیزایی که گذشت رو داره.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SECTION 05
+        ================================================== -->
+
+        <section class="blue-world section" data-section="05">
+
+            <div class="giant-diamond">
+                💎
+            </div>
+
+            <div class="blue-orbit orbit-1"></div>
+            <div class="blue-orbit orbit-2"></div>
+            <div class="blue-orbit orbit-3"></div>
+
+            <div class="blue-content reveal">
+
+                <span class="blue-label">
+                    NO EXPECTATIONS
+                </span>
+
+                <h2>
+                    این سایت
+                    <br>
+                    برای برگردوندنت نیست
+                </h2>
+
+                <p>
+                    نمیخوام چیزی رو باهاش ثابت کنم
+                    <br>
+                    یا مجبور باشی چیزی رو حس کنی
+                    <br>
+                    فقط چون من دوست دارم حسش کنی
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SECTION 06
+        ================================================== -->
+
+        <section class="final section" data-section="06">
+
+            <div class="final-glow"></div>
+
+            <div class="container">
+
+                <div class="final-content reveal">
+
+                    <div class="final-diamond">
+                        💎
+                    </div>
+
+                    <span class="blue-label">
+                        06 / END
+                    </span>
+
+                    <h2>
+                        تو برای من
+                        <br>
+                        مهم بودی
+                        <span>و هستی</span>
+                    </h2>
+
+                    <div class="final-line"></div>
+
+                    <p>
+                        اینو نمیگم که ازش نتیجه‌ای بگیرم.
+                    </p>
+
+                    <p>
+                        فقط چون حقیقتشه.
+                    </p>
+
+                    <p class="small-final">
+                        لازم نیست جواب بدی.
+                        <br>
+                        لازم نیست چیزی رو درست کنی.
+                        <br>
+                        فقط همین.
+                    </p>
+
+                    <div class="end-mark">
+                        💎
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
