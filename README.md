@@ -24,13 +24,75 @@
 
 ```
 index.html            مارک‌آپ (تم و متن‌ها دست‌نخورده)
+404.html              صفحه‌ی پیدا نشد (GitHub Pages خودش سرو می‌کند)
 style.css             دیزاین‌سیستم ۱۰ بخشی
 script.js             یک حلقه‌ی rAF که همه چیز را می‌چرخاند
+manifest.webmanifest  نصب روی موبایل (PWA)
+.nojekyll             به Jekyll می‌گوید دست نزن
+tools/gen-assets.mjs  سازنده‌ی آیکون‌ها و تصویر پیش‌نمایش
+tools/pages-workflow.yml  ورک‌فلوی آماده‌ی Pages (راه ۲)
 assets/
   fonts/              فونت‌های متغیر woff2
+  icons/              آیکون‌های PWA و فاوآیکون
   vendor/lenis.min.js
+  og.png              تصویر پیش‌نمایش ۱۲۰۰×۶۳۰
   music.m4a
 ```
+
+
+## دیپلوی (GitHub Pages)
+
+همه‌چیز آماده است؛ فقط یک بار باید Pages روشن شود. آدرس سایت:
+
+```
+https://bdadmehr0.github.io/my-blue-diamond.github.io/
+```
+
+### راه ۱ — بدون هیچ فایلی (ساده‌ترین)
+
+```
+Settings → Pages → Source: Deploy from a branch
+                   Branch: main   Folder: / (root)   → Save
+```
+
+همین. سایت یک دقیقه بعد بالا می‌آید. فایل `.nojekyll` هم گذاشته شده تا
+Jekyll هیچ فایلی را فیلتر نکند.
+
+### راه ۲ — دیپلوی با Actions
+
+فایل `tools/pages-workflow.yml` را به `.github/workflows/pages.yml` منتقل کن
+(چرا آنجا نیست؟ چون GitHub اجازه نمی‌دهد اپ‌ها فایل workflow بسازند).
+
+بعد از آن هر push روی `main` خودکار دیپلوی می‌شود و ورک‌فلو با
+`enablement: true` حتی Pages را هم خودش روشن می‌کند.
+
+### چیزهایی که برای Pages آماده شده
+
+| فایل | کار |
+|---|---|
+| `.nojekyll` | جلوی فیلتر شدن فایل‌ها توسط Jekyll را می‌گیرد |
+| `404.html` | صفحه‌ی پیدا نشد — GitHub Pages خودش سروش می‌کند |
+| `manifest.webmanifest` | نصب روی هوم‌اسکرین موبایل |
+| `assets/icons/` | فاوآیکون، آیکون ۱۹۲/۵۱۲، ماسکبل، apple-touch |
+| `assets/og.png` | تصویر پیش‌نمایش ۱۲۰۰×۶۳۰ برای تلگرام/توییتر/واتس‌اپ |
+
+همه‌ی آدرس‌ها **نسبی** هستند (`assets/...` نه `/assets/...`)، پس زیرمسیر
+پروژه بدون مشکل کار می‌کند.
+
+
+## ساخت آیکون‌ها و تصویر پیش‌نمایش
+
+آیکون‌ها و `assets/og.png` از همان **هندسه‌ی الماسِ WebGL** ساخته می‌شوند،
+پس آیکون واقعاً همان الماس سایت است. برای ساختن مجدد:
+
+```bash
+npm i --no-save sharp          # فقط برای همین اسکریپت
+node tools/gen-assets.mjs
+```
+
+فونت‌های فارسی برای رندر متن باید نصب باشند (فایل‌های ttf در `~/.fonts`).
+
+> توجه: خود سایت هیچ npm dependency ندارد — `sharp` فقط ابزار توسعه است.
 
 ## بخش‌های سایت
 
